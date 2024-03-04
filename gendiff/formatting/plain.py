@@ -1,4 +1,4 @@
-def check_value(value):
+def check_val(value):
     if isinstance(value, dict):
         return '[complex value]'
     elif isinstance(value, bool):
@@ -15,7 +15,7 @@ def make_plain(lists, path=''):
     for elem in lists:
         key = elem['key']
         value = elem['value']
-        value_new = elem['new_value']
+        valuen = elem['new_value']
         string = f"Property '{path}{key}' was"
         match elem['status']:
             case "dict":
@@ -23,10 +23,10 @@ def make_plain(lists, path=''):
             case "deleted":
                 res.append(f"{string} removed")
             case "added":
-                res.append(f"{string} added with value: {check_value(value)}")
+                res.append(f"{string} added with value: {check_val(value)}")
             case "updated":
                 res.append(f"{string} updated. "
-                           f"From {check_value(value)} to {check_value(value_new)}")
+                           f"From {check_val(value)} to {check_val(valuen)}")
             case "without changes":
                 continue
             case _:
