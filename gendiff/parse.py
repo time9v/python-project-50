@@ -19,4 +19,3 @@ def parsing_files(file_to_parse, format):
         return json.load(file_to_parse)
     if format == 'yaml':
         return yaml.safe_load(file_to_parse)
-

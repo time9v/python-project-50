@@ -5,37 +5,13 @@ from gendiff.formatting.jsonform import make_json
 
 
 def make_dict(status, k, value, new_value=None):
-    dictionary = {
+    dictr = {
         "status": status,
         'key': k,
         'value': value,
         'new_value': new_value
     }
-    return dictionary
-
-
-def chek_key(k, file1, file2):
-    if k in file1 and k in file2 and file1[k] == file2[k]:
-        res = make_dict("without changes", k, file1[k])
-    elif k in file1 and k in file2 and file1[k] != file2[k]:
-        res = make_dict("updated", k, file1[k], file2[k])
-    elif k in file1:
-        res = make_dict("deleted", k, file1[k])
-    elif k in file2:
-        res = make_dict("added", k, file2[k])
-    else:
-        raise ValueError("There is no such key in files")
-    return res
-
-
-def make_dict(status, k, value, new_value=None):
-    dictionary = {
-        "status": status,
-        'key': k,
-        'value': value,
-        'new_value': new_value
-    }
-    return dictionary
+    return dictr
 
 
 def chek_key(k, file1, file2):
