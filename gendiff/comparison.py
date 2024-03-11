@@ -1,7 +1,7 @@
 from gendiff.parse import parsing_files, path_file
 from gendiff.formatting.stylish import make_stylish
 from gendiff.formatting.plain import make_plain
-from gendiff.formatting.jsonform import make_json
+from gendiff.formatting.json_form import make_json
 
 
 def make_dict(status, k, value, new_value=None):
