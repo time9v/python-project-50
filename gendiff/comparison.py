@@ -14,7 +14,7 @@ def make_dict(status, k, value, new_value=None):
     return dictr
 
 
-def chek_key(k, file1, file2):
+def check_key(k, file1, file2):
     if k in file1 and k in file2 and file1[k] == file2[k]:
         res = make_dict("without changes", k, file1[k])
     elif k in file1 and k in file2 and file1[k] != file2[k]:
@@ -38,7 +38,7 @@ def make_diff(file1, file2):
             res = make_dict("dict", k, make_diff(child1, child2))
             diff.append(res)
         else:
-            diff.append(chek_key(k, file1, file2))
+            diff.append(check_key(k, file1, file2))
     return diff
 
 
